@@ -28,7 +28,8 @@ function postPage_flex_display_blogposts($atts, $content = NULL) {
     $atts = shortcode_atts(
         [
             'orderby' => 'date',
-            'posts_per_page' => '1000'
+            'posts_per_page' => '1000',
+            'format' => 'square'
         ], $atts, 'recent-posts' );
     
     $query = new WP_Query( $atts );
@@ -39,7 +40,7 @@ function postPage_flex_display_blogposts($atts, $content = NULL) {
 
     $backgroundImageUrl = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
     
-        $output .= '<div class="ppf_flex-items" style="background-image: url(' . $backgroundImageUrl . ')"><a href="' . get_permalink() . '"><img class="ppf_transparent" src="' . plugins_url( 'assets/img/transparent.png', __FILE__ ) . '"><span>' . get_the_title() . '</span></a></div>';
+        $output .= '<div class="ppf_flex-items" style="background-image: url(' . $backgroundImageUrl . ')"><a href="' . get_permalink() . '"><img class="ppf_transparent" src="' . plugins_url( 'assets/img/'.esc_attr($atts['format']).'.png', __FILE__ ) . '"><span>' . get_the_title() . '</span></a></div>';
     
     endwhile;
 
