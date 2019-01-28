@@ -18,4 +18,34 @@ add_action( 'wp_enqueue_scripts', 'postPage_flex_enqueue_scripts' );
 
 
 // Allows the integration of shortcodes in widget areas:
+
 add_filter( 'widget_text', 'do_shortcode' );
+
+
+// Display blogposts
+
+function postPage_flex_display_blogposts($atts, $content = NULL) {
+    $atts = shortcode_atts(
+        [
+            'orderby' => 'date',
+            'posts_per_page' => '1000'
+        ], $atts, 'recent-posts' );
+    
+    $query = new WP_Query( $atts );
+
+    $output = '<div class="ppf_flex">';
+
+    while($query->have_posts()) : $query->the_post();
+
+    $backgroundImageUrl = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
+    
+        $output .= '<div class="ppf_flex-items" style="background-image: url(' . $backgroundImageUrl . ')"><a href="' . get_permalink() . '"><img class="ppf_transparent" src="' . plugins_url( 'assets/img/transparent.png', __FILE__ ) . '"><span>' . get_the_title() . '</span></a></div>';
+    
+    endwhile;
+
+    wp_reset_query();
+
+    return $output . '</div>';
+}
+        
+add_shortcode('recent-blogposts', 'postPage_flex_display_blogposts');
