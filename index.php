@@ -104,7 +104,15 @@ Für Y können u.a. folgende Werte verwendet werden:
   <li>rand <i>(= random)</i></li>
 </ul></p>
 
-<p>Natürlich können auch beide Parameter (posts_per_page und orderby) kombiniert werden: <strong>[recent-blogposts posts_per_page="X" orderby="Y"]</strong></p>
+<p><strong>[recent-blogposts format="Z"]</strong> gibt die Beiträge in einem anderen Format bzw. Seitenverhältnis aus. Wird dieser Parameter weggelassen, werden die Beiträge standardmäßig quadratisch dargestellt.<br>
+Für Z können folgende Werte verwendet werden:
+<ul>
+  <li>square</li>
+  <li>2x1</li>
+  <li>3x2</li>
+</ul></p>
+
+<p>Natürlich können auch alle oder einzelne Parameter kombiniert werden: <strong>[recent-blogposts format="3x2" posts_per_page="X" orderby="Y"]</strong></p>
 ';
 }
 
