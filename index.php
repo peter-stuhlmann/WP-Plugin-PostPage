@@ -65,3 +65,45 @@ function postPage_flex_plugin_row_meta( $links, $file ) {
 }
 
 add_filter( 'plugin_row_meta', 'postPage_flex_plugin_row_meta', 10, 2 );
+
+
+// Admin Menu
+
+function postPage_flex_admin_menu() {
+    $page_title = 'PostPage Flex';
+    $menu_title = 'PostPage Flex';
+    $capability = 'manage_options';
+    $menu_slug = 'postpage-flex-settings';
+    $function = 'postPage_flex_settings';
+    add_options_page($page_title, $menu_title, $capability, $menu_slug, $function);
+}
+add_action('admin_menu', 'postPage_flex_admin_menu');
+
+
+// Plugin page
+
+function postPage_flex_settings() {
+    if (!current_user_can('manage_options')) {
+        wp_die('You do not have sufficient permissions to access this page.');
+    } echo '
+
+<h2>PostPage Flex</h2>
+
+<p><strong>[recent-blogposts]</strong> gibt alle Beiträge (max. 1.000 Beiträge) in chronologischer Reihenfolge aus.</p>
+<p><strong>[recent-blogposts posts_per_page="X"]</strong> gibt die letzten X Beiträge in chronologischer Reihenfolge aus.</p>
+
+<p><strong>[recent-blogposts orderby="Y"]</strong> gibt alle Beiträge (max. 1.000 Beiträge) in Y-Reihenfolge aus.<br>
+Für Y können u.a. folgende Werte verwendet werden:
+<ul>
+  <li>ID</li>
+  <li>author</li>
+  <li>title</li>
+  <li>modified</li>
+  <li>relevance</li>
+  <li>rand <i>(= random)</i></li>
+</ul></p>
+
+<p>Natürlich können auch beide Parameter (posts_per_page und orderby) kombiniert werden: <strong>[recent-blogposts posts_per_page="X" orderby="Y"]</strong></p>
+';
+}
+
