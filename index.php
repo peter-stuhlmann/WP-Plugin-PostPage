@@ -31,7 +31,8 @@ function postPage_flex_display_blogposts($atts, $content = NULL) {
             'posts_per_page' => '-1',
             'category_name' => '',
             'tag' => '',
-            'format' => 'square'
+            'format' => 'square',
+            'hover' => ''
         ], $atts, 'recent-posts' );
         
     $query = new WP_Query( $atts );
@@ -42,7 +43,7 @@ function postPage_flex_display_blogposts($atts, $content = NULL) {
 
     $backgroundImageUrl = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
     
-        $output .= '<div class="ppf_flex-items" style="background-image: url(' . $backgroundImageUrl . ')"><a href="' . get_permalink() . '"><img class="ppf_transparent" src="' . plugins_url( 'assets/img/'.esc_attr($atts['format']).'.png', __FILE__ ) . '"><span>' . get_the_title() . '</span></a></div>';
+        $output .= '<div class="ppf_flex-items '.esc_attr($atts['hover']).'" style="background-image: url(' . $backgroundImageUrl . ')"><a href="' . get_permalink() . '"><img class="ppf_transparent" src="' . plugins_url( 'assets/img/'.esc_attr($atts['format']).'.png', __FILE__ ) . '"><span>' . get_the_title() . '</span></a></div>';
     
     endwhile;
 
