@@ -28,10 +28,12 @@ function postPage_flex_display_blogposts($atts, $content = NULL) {
     $atts = shortcode_atts(
         [
             'orderby' => 'date',
-            'posts_per_page' => '1000',
+            'posts_per_page' => '-1',
+            'category_name' => '',
+            'tag' => '',
             'format' => 'square'
         ], $atts, 'recent-posts' );
-    
+        
     $query = new WP_Query( $atts );
 
     $output = '<div class="ppf_flex">';
