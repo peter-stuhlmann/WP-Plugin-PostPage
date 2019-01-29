@@ -1,9 +1,9 @@
 <h2>PostPage Flex</h2>
 
-<p><strong>[recent-blogposts]</strong> gibt alle Beiträge (max. 1.000 Beiträge) in chronologischer Reihenfolge aus.</p>
+<p><strong>[recent-blogposts]</strong> gibt alle Beiträge in chronologischer Reihenfolge aus.</p>
 <p><strong>[recent-blogposts posts_per_page="X"]</strong> gibt die letzten X Beiträge in chronologischer Reihenfolge aus.</p>
 
-<p><strong>[recent-blogposts orderby="Y"]</strong> gibt alle Beiträge (max. 1.000 Beiträge) in Y-Reihenfolge aus.<br>
+<p><strong>[recent-blogposts orderby="Y"]</strong> gibt alle Beiträge in Y-Reihenfolge aus.<br>
 Für Y können u.a. folgende Werte verwendet werden:
 <ul>
   <li>ID</li>
@@ -22,4 +22,8 @@ Für Z können folgende Werte verwendet werden:
   <li>3x2</li>
 </ul></p>
 
-<p>Natürlich können auch alle oder einzelne Parameter kombiniert werden: <strong>[recent-blogposts format="3x2" posts_per_page="X" orderby="Y"]</strong></p>
+<p><strong>[recent-blogposts category_name="abc"]</strong> gibt alle Beiträge der Kategorie abc in chronologischer Reihenfolge aus.</p>
+
+<p><strong>[recent-blogposts tag="xyz"]</strong> gibt alle Beiträge mit dem Tag xyz in chronologischer Reihenfolge aus.</p>
+
+<p>Natürlich können auch alle oder einzelne Parameter kombiniert werden: <strong>[recent-blogposts format="3x2" posts_per_page="X" orderby="Y" category_name="abc" tag="xyz"]</strong></p>
