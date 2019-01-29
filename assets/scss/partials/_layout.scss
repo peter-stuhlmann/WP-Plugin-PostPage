@@ -13,10 +13,12 @@
         background-size: cover;
         position: relative;
         transition: 0.2s linear;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
 
         &:hover {
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%)
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
         }
 
         @media only screen and (max-width: $tablet) {
@@ -42,6 +44,16 @@
             line-height: 2em;
             text-align: center;
             padding: 15px
+        }
+    }
+
+    .grayscale {
+        -webkit-filter: grayscale(0%);
+        filter: grayscale(0%);
+
+        &:hover {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
         }
     }
 }
