@@ -22,7 +22,7 @@ add_action( 'wp_enqueue_scripts', 'postPage_flex_enqueue_scripts' );
 add_filter( 'widget_text', 'do_shortcode' );
 
 
-// Display blogposts
+// Display blogposts only with thumbnail and title
 
 function postPage_flex_display_blogposts($atts, $content = NULL) {
     $atts = shortcode_atts(
@@ -43,7 +43,12 @@ function postPage_flex_display_blogposts($atts, $content = NULL) {
 
     $backgroundImageUrl = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
     
-        $output .= '<div class="ppf_flex-items '.esc_attr($atts['hover']).'" style="background-image: url(' . $backgroundImageUrl . ')"><a href="' . get_permalink() . '"><img class="ppf_transparent" src="' . plugins_url( 'assets/img/'.esc_attr($atts['format']).'.png', __FILE__ ) . '"><span>' . get_the_title() . '</span></a></div>';
+        $output .= '
+        <div class="ppf_flex-items '.esc_attr($atts['hover']).'" style="background-image: url(' . $backgroundImageUrl . ')">
+          <a href="' . get_permalink() . '">
+            <img class="ppf_transparent" src="' . plugins_url( 'assets/img/'.esc_attr($atts['format']).'.png', __FILE__ ) . '"><span>' . get_the_title() . '</span>
+          </a>
+        </div>';
     
     endwhile;
 
@@ -53,6 +58,48 @@ function postPage_flex_display_blogposts($atts, $content = NULL) {
 }
         
 add_shortcode('recent-blogposts', 'postPage_flex_display_blogposts');
+
+
+// Display blogposts with thumbnail, title, date, author and excerpt
+
+function postPage_flex_display_blogposts_complex($atts, $content = NULL) {
+    $atts = shortcode_atts(
+        [
+            'orderby' => 'date',
+            'posts_per_page' => '-1',
+            'category_name' => '',
+            'tag' => '',
+            'format' => '2x1',
+            'hover' => ''
+        ], $atts, 'recent-posts' );
+        
+    $query = new WP_Query( $atts );
+
+    $output = '<div class="ppf_flex">';
+
+    while($query->have_posts()) : $query->the_post();
+
+    $backgroundImageUrl = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'full') );
+    
+        $output .= '
+        <div class="ppf_flex-items-complex '.esc_attr($atts['hover']).'">
+          <a href="' . get_permalink() . '">
+            <img style="background-image: url(' . $backgroundImageUrl . ')" class="ppf_transparent" src="' . plugins_url( 'assets/img/'.esc_attr($atts['format']).'.png', __FILE__ ) . '">
+            <span class="ppf_date">' . get_the_date() . '</span>
+            <span class="ppf_title">' . get_the_title() . '</span>
+            <span class="ppf_author">von ' . get_the_author() . '</span>
+          </a>
+          <span class="ppf_excerpt">' . get_the_excerpt() . '</span>
+        </div>';
+    
+    endwhile;
+
+    wp_reset_query();
+
+    return $output . '</div>';
+}
+        
+add_shortcode('recent-blogposts-complex', 'postPage_flex_display_blogposts_complex');
 
 
 // Plugin row meta
