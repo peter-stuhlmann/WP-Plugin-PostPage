@@ -11,7 +11,7 @@
     }
 
     .ppf_flex-items {
-        width: 32%;
+        flex: 0 0 32%;
         margin-bottom: 20px;
         text-align: center;
         background-color: $secondaryColor;
@@ -27,11 +27,11 @@
         }
 
         @media only screen and (max-width: $tablet) {
-            width: 49%
+            flex: 0 0 49%
         }
 
         @media only screen and (max-width: $mobile) {
-            width: 100%
+            flex: 0 0 100%
         }
 
         .ppf_transparent {
@@ -53,7 +53,7 @@
     }
 
     .ppf_flex-items-complex {
-        width: 32%;
+        flex: 0 0 32%;
         margin-bottom: 65px;
         text-align: center;
         background-size: cover;
@@ -68,11 +68,11 @@
         }
 
         @media only screen and (max-width: $tablet) {
-            width: 49%
+            flex: 0 0 49%
         }
 
         @media only screen and (max-width: $mobile) {
-            width: 100%
+            flex: 0 0 100%
         }
 
         a {
