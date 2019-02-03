@@ -17,10 +17,10 @@
     .ppf_flex .ppf_flex-items:hover {
       -webkit-filter: grayscale(0%);
       filter: grayscale(0%); }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1000px) {
       .ppf_flex .ppf_flex-items {
         width: 49%; } }
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 600px) {
       .ppf_flex .ppf_flex-items {
         width: 100%; } }
     .ppf_flex .ppf_flex-items .ppf_transparent {
@@ -36,6 +36,50 @@
       line-height: 2em;
       text-align: center;
       padding: 15px; }
+  .ppf_flex .ppf_flex-items-complex {
+    width: 32%;
+    margin-bottom: 65px;
+    text-align: center;
+    background-size: cover;
+    position: relative;
+    transition: 0.2s linear;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+    .ppf_flex .ppf_flex-items-complex:hover {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%); }
+    @media only screen and (max-width: 1000px) {
+      .ppf_flex .ppf_flex-items-complex {
+        width: 49%; } }
+    @media only screen and (max-width: 600px) {
+      .ppf_flex .ppf_flex-items-complex {
+        width: 100%; } }
+    .ppf_flex .ppf_flex-items-complex a {
+      text-decoration: none; }
+    .ppf_flex .ppf_flex-items-complex .ppf_transparent {
+      width: 100%;
+      margin: 0 0 15px 0;
+      background-size: cover;
+      background-color: #000; }
+    .ppf_flex .ppf_flex-items-complex .ppf_date {
+      color: #808080;
+      font-size: 0.8em;
+      display: block; }
+    .ppf_flex .ppf_flex-items-complex .ppf_title {
+      color: #000;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2em;
+      display: block; }
+    .ppf_flex .ppf_flex-items-complex .ppf_author {
+      color: #808080;
+      font-size: 0.8em;
+      display: block;
+      margin-bottom: 25px; }
+    .ppf_flex .ppf_flex-items-complex .ppf_excerpt {
+      color: darkslategray;
+      font-size: 0.9em;
+      display: block; }
   .ppf_flex .grayscale {
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%); }
