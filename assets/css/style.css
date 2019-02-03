@@ -4,6 +4,9 @@
   justify-content: space-between;
   width: 100%;
   margin: 0 auto; }
+  .ppf_flex::after {
+    content: "";
+    flex: 0 0 32%; }
   .ppf_flex .ppf_flex-items {
     width: 32%;
     margin-bottom: 20px;
