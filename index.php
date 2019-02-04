@@ -12,7 +12,7 @@
 // Stylesheets and JavaScript files
 
 function postPage_flex_enqueue_scripts() {
-    wp_enqueue_style( 'postpage-flex-styles', plugin_dir_url( __FILE__ ) . "/assets/css/style.css", '', '20190128');
+    wp_enqueue_style( 'postpage-flex-styles', plugin_dir_url( __FILE__ ) . "/assets/css/style.css", '', '20190204');
 }
 add_action( 'wp_enqueue_scripts', 'postPage_flex_enqueue_scripts' );
 
@@ -89,7 +89,7 @@ function postPage_flex_display_blogposts_complex($atts, $content = NULL) {
             <span class="ppf_title">' . get_the_title() . '</span>
             <span class="ppf_author">von ' . get_the_author() . '</span>
           </a>
-          <span class="ppf_excerpt">' . get_the_excerpt() . '</span>
+          <span class="ppf_excerpt">' . get_the_excerpt() . '</span><a class="ppf_readmore" href="' . get_permalink() . '">READ MORE &rarr;</a>
         </div>';
     
     endwhile;
