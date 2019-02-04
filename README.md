@@ -1,12 +1,16 @@
 # PostPage Flex
 
-**[recent-blogposts]** gibt alle Beiträge (max. 1.000 Beiträge) in chronologischer Reihenfolge aus.
+**[recent-blogposts]** gibt alle Beiträge in chronologischer Reihenfolge aus. Dabei werden nur das Beitragsbild sowie der Titel des Beitrags ausgegeben.
 
-**[recent-blogposts posts_per_page="X"]** gibt die letzten X Beiträge in chronologischer Reihenfolge aus.
+Mit dem Shortcode **[recent-blogposts-complex]** werden ebenfalls alle Beiträge in chronologischer Reihenfolge ausgegeben. Es werden allerdings neben dem Titel und dem Beitragsbild auch das Veröffentlichungsdatum, der Autor und ein kurzer Textausschnitt ausgegeben.
 
-**[recent-blogposts orderby="Y"]** gibt alle Beiträge (max. 1.000 Beiträge) in Y-Reihenfolge aus.
+Diese Shortcodes können durch Parameter erweitert werden, um individuelle Einstellungen für die Ausgabe der Blogposts zu treffen. Sie werden einfach zusätzlich in die eckigen Klammern geschrieben.
+
+**posts_per_page="X"** gibt die letzten X Beiträge in chronologischer Reihenfolge aus.
+
+**orderby="Y"** gibt alle Beiträge in Y-Reihenfolge aus.
 Für Y können u.a. folgende Werte verwendet werden:
-- ID
+-ID
 - author
 - title
 - modified
@@ -14,12 +18,19 @@ Für Y können u.a. folgende Werte verwendet werden:
 - rand _(= random)_
 
 
-**[recent-blogposts format="Z"]** gibt die Beiträge in einem anderen Format bzw. Seitenverhältnis aus. Wird dieser Parameter weggelassen, werden die Beiträge standardmäßig quadratisch dargestellt.
+**format="Z"** gibt die Beiträge in einem anderen Format bzw. Seitenverhältnis aus. Wird dieser Parameter weggelassen, werden die Beiträge standardmäßig beim Shortcode
+- [recent-blogposts] quadratisch und bei
+- [recent-blogposts-complex] im Verhältnis 2:1 
+dargestellt.
 Für Z können folgende Werte verwendet werden:
 - square
 - 2x1
 - 3x2
 
-Natürlich können auch alle oder einzelne Parameter kombiniert werden: **[recent-blogposts format="3x2" posts_per_page="X" orderby="Y"]**
+**category_name="abc"** gibt alle Beiträge der Kategorie abc in chronologischer Reihenfolge aus.
 
-&copy; [Peter R. Stuhlmann](https://peter-stuhlmann-webentwicklung.de/)
+**tag="xyz"** gibt alle Beiträge mit dem Tag xyz in chronologischer Reihenfolge aus.
+
+**hover="grayscale"** sorgt dafür, dass das Beitragsbild beim Überfahren mit der Maus in Graustufen angezeigt wird. Wird dieser Parameter weggelassen, ist der Effekt umgekehrt: Die Bilder werden standardmäßig in Graustufen gezeigt und beim Überfahren mit der Maus nehmen sie die entsprechenden Originalfarben an.
+
+Natürlich können auch alle oder einzelne Parameter kombiniert werden: z.B. **[recent-blogposts format="3x2" posts_per_page="X" orderby="Y" category_name="abc" tag="xyz"]**
