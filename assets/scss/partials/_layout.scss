@@ -49,7 +49,8 @@
             width: 100%;
             line-height: 2em;
             text-align: center;
-            padding: 15px
+            padding: 15px;
+            box-sizing: border-box
         }
     }
 
@@ -62,6 +63,9 @@
         transition: 0.2s linear;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
+
+        display: flex;
+        flex-direction: column;
 
         &:hover {
             -webkit-filter: grayscale(0%);
@@ -98,7 +102,9 @@
             width: 100%;
             text-align: center;
             font-size: 1.2em;
-            display: block
+            line-height: 1.2em;
+            display: block;
+
         }
 
         .ppf_author {
@@ -112,6 +118,16 @@
             color: darkslategray;
             font-size: 0.9em;
             display: block;
+        }
+
+        .ppf_readmore {
+            font-style: italic;
+            font-size: 0.9em;
+            display: block;
+
+            &:hover {
+                opacity: 0.8
+            }
         }
     }
 
