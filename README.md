@@ -1,4 +1,12 @@
-# PostPage Flex
+# WP PostPage Flex
+
+![Wordpress](https://img.shields.io/badge/Wordpress-blue.svg)
+[![MIT License](https://img.shields.io/github/license/peter-stuhlmann/WP-Plugin-PostPage.svg)](https://github.com/peter-stuhlmann/WP-Plugin-PostPage/blob/master/LICENSE) 
+![Language](https://img.shields.io/badge/lang-PHP/SCSS-orange.svg)
+![Code size](https://img.shields.io/github/languages/code-size/peter-stuhlmann/WP-Plugin-PostPage.svg)
+[![open issues](https://img.shields.io/github/issues/peter-stuhlmann/WP-Plugin-PostPage.svg)](https://github.com/peter-stuhlmann/WP-Plugin-PostPage/issues?q=is%3Aopen+is%3Aissue)
+[![closed issues](https://img.shields.io/github/issues-closed/peter-stuhlmann/WP-Plugin-PostPage.svg)](https://github.com/peter-stuhlmann/WP-Plugin-PostPage/issues?q=is%3Aissue+is%3Aclosed)
+[![closed issues](https://img.shields.io/badge/dev-Peter%20R.%20Stuhlmann-green.svg)](https://peter-stuhlmann-webentwicklung.de)
 
 **[recent-blogposts]** gibt alle Beiträge in chronologischer Reihenfolge aus. Dabei werden nur das Beitragsbild sowie der Titel des Beitrags ausgegeben.
 
@@ -34,3 +42,13 @@ Für Z können folgende Werte verwendet werden:
 **hover="grayscale"** sorgt dafür, dass das Beitragsbild beim Überfahren mit der Maus in Graustufen angezeigt wird. Wird dieser Parameter weggelassen, ist der Effekt umgekehrt: Die Bilder werden standardmäßig in Graustufen gezeigt und beim Überfahren mit der Maus nehmen sie die entsprechenden Originalfarben an.
 
 Natürlich können auch alle oder einzelne Parameter kombiniert werden: z.B. **[recent-blogposts format="3x2" posts_per_page="X" orderby="Y" category_name="abc" tag="xyz"]**
+
+---
+
+## License
+
+Licensed under the [MIT](https://github.com/peter-stuhlmann/WP-Plugin-PostPage/blob/master/LICENSE) License.
+
+---
+
+[&copy; Peter R. Stuhlmann Webentwicklung](https://peter-stuhlmann-webentwicklung.de). All rights reserved.
